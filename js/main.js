@@ -107,18 +107,22 @@ async function getAdhanTime(city, country) {
     }
     
 }
+async function getWeatherData(latitude, longitude) {
+
+    let apiKey = "9ea7e422d79545cadf2144e53d795532";
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+
+    let response = await fetch(url, {
+        method: "GET",
+    });
+    if (response.ok) { 
+        let date = response.json();
+        let weather = document.querySelector(".weather");
+    }
+}
 
  getAdhanTime("London" , "usa");
 
-
- document.getElementById('searchForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form submission from reloading the page
-    let city = document.getElementById('cityInput').value.trim();
-    console.log(city);
-    if (city) {
-        getAdhanTime(city,"Egypt"); // Fetch prayer times for the entered city
-    }
-});
  document.getElementById('searchForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent form submission from reloading the page
     let city = document.getElementById('cityInput').value.trim();
