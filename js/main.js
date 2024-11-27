@@ -108,10 +108,27 @@ async function getAdhanTime(city, country) {
     
 }
 
- getAdhanTime("Cairo" , "Egypt");
+ getAdhanTime("London" , "usa");
 
 
-
+ document.getElementById('searchForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+    let city = document.getElementById('cityInput').value.trim();
+    console.log(city);
+    if (city) {
+        getAdhanTime(city,"Egypt"); // Fetch prayer times for the entered city
+    }
+});
+ document.getElementById('searchForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent form submission from reloading the page
+    let city = document.getElementById('cityInput').value.trim();
+    let country = document.getElementById('countryInput').value.trim();
+    console.log(city);
+    if (city) {
+        getAdhanTime(city,country); // Fetch prayer times for the entered city
+    }
+    
+});
 
 
 

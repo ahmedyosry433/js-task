@@ -20,14 +20,19 @@
 </head>
 
 <body>
-    <div class="header bg-black text-white">
+    <div class="header bg-black text-white p-2">
         <div class="container  d-flex justify-content-between align-items-center">
             <div>
                 <p class="date-time"></p>
                 <p class="hajry-date">Hajgry Date </p>
             </div>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex  mt-2" role="search" id="searchForm">
+                <div class="search d-flex flex-column me-3 ">
+                    <input class="form-control me-2 mb-2" type="search" placeholder="City" aria-label="Search"
+                        id="cityInput">
+                    <input class="form-control me-2" type="search" placeholder="Country" aria-label="Search"
+                        id="countryInput">
+                </div>
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <p class="country">Prayer Time</p>
